@@ -16,12 +16,12 @@ Invalid(DROP)	net		all		tcp
 
 #	Accept DNS connections from the firewall to the network
 #
-DNS(ACCEPT)	$FW		net
-DNS(ACCEPT) loc     $FW
+DNS(ACCEPT)     $FW		net
+DNS(ACCEPT)     loc     $FW
 
 #	Accept SSH connections from the local network for administration
 #
-SSH(ACCEPT)	loc		$FW
+SSH(ACCEPT)     loc		$FW
 
 #	Allow Ping requests
 #
@@ -30,8 +30,9 @@ Ping(ACCEPT)    net     $FW -   -   -   -   d:5/sec:50
 
 # Port Forwarding
 #
-DNAT            net     loc:192.168.0.3     tcp     ssh,www,https
-DNAT            net     loc:192.168.0.50    tcp     3389,5900
+DNAT            net     loc:192.168.0.50            tcp     5900
+DNAT            net     loc:192.168.0.51            tcp     3389
+DNAT            net     loc:192.168.0.1:22          tcp     2222
 
 
 
