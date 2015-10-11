@@ -30,9 +30,14 @@ Ping(ACCEPT)    net     $FW -   -   -   -   d:5/sec:50
 
 # Port Forwarding
 #
-DNAT            net     loc:192.168.0.50            tcp     5900
-DNAT            net     loc:192.168.0.51            tcp     3389
+DNAT            net     loc:192.168.0.50:5900       tcp     5900
+DNAT            net     loc:192.168.0.51:3389       tcp     3389
 DNAT            net     loc:192.168.0.1:22          tcp     2222
+
+DNAT            net     loc:192.168.0.1             tcp     40000:64999
+DNAT            net     loc:192.168.0.1             udp     40000:64999
+DNAT            net     loc:192.168.0.1             tcp     6881:6889
+DNAT            net     loc:192.168.0.1             udp     6881:6889
 
 
 

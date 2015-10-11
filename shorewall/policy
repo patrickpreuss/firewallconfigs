@@ -17,6 +17,8 @@ $FW		net		ACCEPT
 $FW		loc		ACCEPT
 loc     net     ACCEPT
 loc		$FW		ACCEPT
+net     $FW     ACCEPT
+net     loc     ACCEPT
 net		all		DROP		info
 # THE FOLLOWING POLICY MUST BE LAST
 all		all		REJECT		info
