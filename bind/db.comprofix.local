@@ -1,0 +1,20 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	router.comprofix.local. root.comprofix.local. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@			IN	NS	router.
+comprofix.local.    IN	A       192.168.0.254
+yosemite            IN	A       192.168.0.254
+sylvester           IN	A       192.168.0.1
+porky               IN	A       192.168.0.2
+marvin              IN	A       192.168.0.50
+daffy               IN  A       192.168.0.51
+elmer               IN	A       192.168.0.253
